@@ -1,4 +1,48 @@
+Personal Budget & Expense Tracker
 
+Project Description
+
+This is a simple web-based Budget Tracker built using HTML5 and CSS3. It helps users view and organize daily expenses.
+
+Project Files
+
+index.html
+
+Contains:
+
+- Website heading and logo.
+- Add Expense form.
+- Category dropdown with five options.
+- Expense table with sample expenses.
+- Collapsible instructions.
+- Embedded YouTube video.
+- Google Fonts links for Poppins and Inter.
+
+style.css
+
+Controls the visual design of the application, including:
+
+- Consistent navy, teal, white and light grey color palette.
+- Poppins font for headings.
+- Inter font for body text.
+- Styled form inputs and buttons.
+- Expense table borders and alternating row colors.
+- Rounded cards, margins and padding.
+- Hover and focus effects.
+
+Technologies Used
+
+- HTML5
+- CSS3
+- Google Fonts
+
+Week 3 Design Improvements
+
+The application was improved with a modern and professional visual identity. The page heading, Add Expense form and Expense Table are presented as separate cards. Consistent colors, custom typography, spacing and rounded corners improve readability and user experience.
+
+Author
+
+Isaac Ladu James
 # Personal Budget & Expense Tracker
 
 ## Project Description

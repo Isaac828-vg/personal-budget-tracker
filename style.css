@@ -1,127 +1,173 @@
 
-/* General page styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 20px;
-    color: #333;
+/* =================================
+   BUDGET TRACKER - WEEK 3 DESIGN
+   ================================= */
+
+/* 1. Color palette */
+:root {
+    --primary: #16324F;
+    --secondary: #0F766E;
+    --background: #F4F7FA;
+    --white: #FFFFFF;
+    --text: #334155;
+    --border: #DCE4EC;
+    --row-alt: #EAF2F8;
+    --hover: #D5E9E8;
 }
 
-/* Main heading */
-header {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+/* 2. General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 24px;
+}
+
+/* 3. Headings */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
 }
 
 h1 {
-    color: darkblue;
+    font-size: 30px;
+    margin-bottom: 8px;
 }
 
-/* Add expense form */
+h2 {
+    font-size: 22px;
+}
+
+/* 4. Page heading card */
+header {
+    background-color: var(--white);
+    text-align: center;
+    padding: 28px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(22, 50, 79, 0.06);
+}
+
+/* 5. Add expense form card */
 #add-expense {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    background-color: var(--white);
+    padding: 25px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(22, 50, 79, 0.06);
 }
 
 #add-expense label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 14px;
+    font-weight: 600;
+    color: var(--primary);
 }
 
 #add-expense input,
 #add-expense select {
     display: block;
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background-color: var(--white);
 }
 
 input:focus,
 select:focus {
-    outline: 2px solid blue;
-    border-color: blue;
+    outline: 2px solid var(--secondary);
+    border-color: var(--secondary);
 }
 
-/* Add expense button */
+/* 6. Buttons */
 button {
-    background-color: darkblue;
-    color: white;
-    padding: 12px 20px;
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 12px 24px;
+    margin-top: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: navy;
+    background-color: var(--primary);
 }
 
-/* Expenses section */
+/* 7. Expense table card */
 .expenses {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: var(--white);
+    padding: 25px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(22, 50, 79, 0.06);
     overflow-x: auto;
 }
 
-/* Expense table */
+/* 8. Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
-th,
-td {
-    border: 1px solid #ccc;
-    padding: 12px;
+th, td {
+    border: 1px solid var(--border);
+    padding: 14px;
     text-align: left;
 }
 
-thead {
-    background-color: darkblue;
-    color: white;
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
-/* Advanced CSS selectors */
 tbody tr:nth-child(even) {
-    background-color: #eaf2f8;
+    background-color: var(--row-alt);
 }
 
 tbody tr:hover {
-    background-color: #cce5ff;
+    background-color: var(--hover);
 }
 
-/* Instructions */
-.instructions {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
+/* 9. Instructions and video cards */
+.instructions,
+.video-section {
+    background-color: var(--white);
+    padding: 25px;
+    margin-top: 24px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
 }
 
 summary {
     cursor: pointer;
-    font-weight: bold;
-}
-
-/* Video section */
-.video-section {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
+    color: var(--secondary);
+    font-weight: 600;
 }
 
 iframe {
     max-width: 100%;
+    border-radius: 8px;
 }
-/* General page styling */
-body {
