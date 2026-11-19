@@ -1,3 +1,51 @@
+
+# SpendWise Dashboard
+
+## Project Description
+SpendWise is a responsive personal finance dashboard built using HTML5 and CSS3. It provides a visual overview of income, expenses, savings and spending categories.
+
+## Project Files
+
+### 1. index.html
+Contains the dashboard structure, including:
+- Sidebar navigation menu.
+- Dashboard header and account profile.
+- Financial summary cards.
+- Six expense category cards.
+- Footer.
+
+### 2. style.css
+Controls the dashboard's appearance and layout.
+
+It includes:
+- CSS Grid for the overall dashboard, financial summary and category layout.
+- Flexbox for the sidebar navigation, header and dashboard cards.
+- CSS custom properties for consistent colors and themes.
+- Responsive design for screens below 768px.
+- Hover and keyboard focus animations on category cards.
+- Dark theme using the user's system color preference.
+
+## Technologies Used
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- Google Fonts (Poppins and Inter)
+
+## Features
+- Modern dashboard interface.
+- Sidebar navigation.
+- Financial summary displaying balance, income and expenses.
+- Six spending categories: Food, Transport, Rent, Entertainment, Savings and Utilities.
+- Responsive single-column mobile layout.
+- Smooth card hover and keyboard focus effects.
+- Automatic dark theme support.
+
+## Author
+Isaac Ladu James
+
+## Project Purpose
+This project demonstrates the use of modern CSS layout techniques to create a clean, accessible and responsive financial dashboard.
 Personal Budget & Expense Tracker
 
 Project Description
