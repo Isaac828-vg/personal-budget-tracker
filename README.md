@@ -110,3 +110,62 @@ This week's work helped me understand how JavaScript makes a website interactive
 
 I successfully transformed SpendWise from a static dashboard into an interactive personal budget tracker.
 
+
+## GitHub Repository
+
+The source code for this project is available on GitHub:
+
+https://github.com/Isaac828-vg/personal-budget-tracker
+
+## Live Website
+
+SpendWise is deployed and publicly accessible through Netlify:
+
+https://spendwise-personal-budget-tracker.netlify.app
+
+## Deployment Process Summary
+
+I deployed SpendWise using Netlify by connecting my GitHub repository.
+
+The deployment configuration was:
+
+- GitHub repository: `personal-budget-tracker`
+- Production branch: `main`
+- Build command: None (static website)
+- Publish directory: `.`
+- Netlify project name: `spendwise-personal-budget-tracker`
+
+Netlify hosts the HTML, CSS, and JavaScript files and makes the website accessible online.
+
+## Continuous Deployment Testing
+
+I tested continuous deployment by updating the website footer to include the text "Deployed with Netlify".
+
+After committing and pushing the change to GitHub, Netlify automatically detected the update and deployed the new version.
+
+I refreshed the live website and confirmed that the updated footer appeared successfully.
+
+This confirmed that GitHub and Netlify were connected correctly and that future changes pushed to the main branch can be deployed automatically.
+
+## Deployment Challenges
+
+One challenge was that Netlify initially could not access my GitHub repository. I resolved this by configuring Netlify's access permissions through GitHub.
+
+I also experienced a temporary DNS connection problem when pushing updates from Termux. I resolved it by using a temporary Git connection configuration to reach GitHub successfully.
+
+## Lessons Learned
+
+Through this deployment exercise, I learned how to:
+
+1. Host a static website using Netlify.
+2. Connect a GitHub repository to Netlify.
+3. Configure a production branch and publish directory.
+4. Use continuous deployment to publish website updates automatically.
+5. Test a live website after deployment.
+6. Troubleshoot deployment and network connection problems.
+
+## Final Conclusion
+
+I successfully developed, tested, and deployed SpendWise as a personal budget tracking application.
+
+This project improved my practical skills in HTML, CSS, JavaScript, Git, GitHub, and Netlify. It also helped me understand how developers publish websites and maintain them through continuous deployment.
