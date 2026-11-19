@@ -1,133 +1,108 @@
-
-# SpendWise Dashboard
+# SpendWise - Personal Finance Dashboard
 
 ## Project Description
-SpendWise is a responsive personal finance dashboard built using HTML5 and CSS3. It provides a visual overview of income, expenses, savings and spending categories.
+
+SpendWise is a responsive personal finance dashboard designed to help users understand and manage their monthly budgets and expenses.
+
+The project uses HTML5, CSS3 and JavaScript. Users can enter a monthly budget, record multiple expenses and calculate their total expenses and remaining balance.
 
 ## Project Files
 
 ### 1. index.html
-Contains the dashboard structure, including:
-- Sidebar navigation menu.
+Contains the structure of the SpendWise dashboard, including:
+- Sidebar navigation.
 - Dashboard header and account profile.
 - Financial summary cards.
-- Six expense category cards.
+- Six expense categories.
 - Footer.
+- JavaScript file connection.
 
 ### 2. style.css
-Controls the dashboard's appearance and layout.
+Controls the visual appearance of the dashboard.
 
 It includes:
-- CSS Grid for the overall dashboard, financial summary and category layout.
-- Flexbox for the sidebar navigation, header and dashboard cards.
-- CSS custom properties for consistent colors and themes.
-- Responsive design for screens below 768px.
-- Hover and keyboard focus animations on category cards.
-- Dark theme using the user's system color preference.
+- CSS Grid for the overall dashboard layout.
+- Flexbox for navigation and dashboard components.
+- CSS custom properties for consistent colours.
+- Responsive design for mobile screens.
+- Hover and keyboard focus effects.
+- Dark theme support.
+
+### 3. script.js
+Contains the JavaScript functionality.
+
+It includes:
+- Variables for storing the monthly budget and expenses.
+- Arrays and objects for organising expense information.
+- Prompt dialogs for collecting user input.
+- Functions for calculating total expenses.
+- Functions for calculating the remaining balance.
+- Console messages displaying the budget summary.
+- Input validation to prevent invalid amounts.
+
+## JavaScript Concepts Implemented
+
+### Variables
+The project uses `let` to store the monthly budget and `const` to store the expenses array.
+
+### User Input
+JavaScript `prompt()` collects the monthly budget, number of expenses, expense names and expense amounts.
+
+### Data Types
+The project uses numbers, strings, arrays and objects to organise financial information.
+
+### Functions
+`calculateTotalExpenses()` adds all recorded expenses.
+
+`calculateRemainingBalance()` subtracts total expenses from the monthly budget.
+
+### Loops and Conditional Statements
+A `for` loop collects multiple expenses. Conditional statements validate user input and check whether spending exceeds the budget.
+
+### Console Output
+`console.log()` displays the monthly budget, total expenses, remaining balance and individual expense details.
+
+## Example Calculation
+
+Monthly budget: KES 50,000
+
+Expenses:
+- Food: KES 8,500
+- Transport: KES 4,000
+- Rent: KES 12,000
+
+Total expenses: KES 24,500
+
+Remaining balance: KES 25,500
 
 ## Technologies Used
 - HTML5
 - CSS3
+- JavaScript
 - CSS Grid
 - Flexbox
-- Google Fonts (Poppins and Inter)
+- Google Fonts
 
 ## Features
-- Modern dashboard interface.
-- Sidebar navigation.
-- Financial summary displaying balance, income and expenses.
-- Six spending categories: Food, Transport, Rent, Entertainment, Savings and Utilities.
-- Responsive single-column mobile layout.
-- Smooth card hover and keyboard focus effects.
-- Automatic dark theme support.
+- Responsive personal finance dashboard.
+- Monthly budget input.
+- Multiple expense entries.
+- Automatic expense calculations.
+- Remaining balance calculation.
+- Budget warning when expenses exceed the budget.
+- Clearly labelled browser console results.
+- Mobile-friendly design.
+
+## How to Run the Project
+
+1. Open the project in a web browser.
+2. Enter your monthly budget when prompted.
+3. Enter the number of expenses.
+4. Provide each expense name and amount.
+5. View the calculated budget summary in the browser console.
 
 ## Author
 Isaac Ladu James
 
 ## Project Purpose
-This project demonstrates the use of modern CSS layout techniques to create a clean, accessible and responsive financial dashboard.
-Personal Budget & Expense Tracker
-
-Project Description
-
-This is a simple web-based Budget Tracker built using HTML5 and CSS3. It helps users view and organize daily expenses.
-
-Project Files
-
-index.html
-
-Contains:
-
-- Website heading and logo.
-- Add Expense form.
-- Category dropdown with five options.
-- Expense table with sample expenses.
-- Collapsible instructions.
-- Embedded YouTube video.
-- Google Fonts links for Poppins and Inter.
-
-style.css
-
-Controls the visual design of the application, including:
-
-- Consistent navy, teal, white and light grey color palette.
-- Poppins font for headings.
-- Inter font for body text.
-- Styled form inputs and buttons.
-- Expense table borders and alternating row colors.
-- Rounded cards, margins and padding.
-- Hover and focus effects.
-
-Technologies Used
-
-- HTML5
-- CSS3
-- Google Fonts
-
-Week 3 Design Improvements
-
-The application was improved with a modern and professional visual identity. The page heading, Add Expense form and Expense Table are presented as separate cards. Consistent colors, custom typography, spacing and rounded corners improve readability and user experience.
-
-Author
-
-Isaac Ladu James
-# Personal Budget & Expense Tracker
-
-## Project Description
-This project is a simple web-based budget tracker built using HTML5 and CSS3. It helps users view and organize daily expenses.
-
-## Project Files
-
-### index.html
-Contains:
-- Website heading and logo.
-- Add Expense form.
-- Category dropdown with five options.
-- Expense table with five sample expenses.
-- Collapsible instructions.
-- Embedded YouTube video.
-
-### style.css
-Controls:
-- Page layout and background.
-- Form and button styling.
-- Expense table borders and colours.
-- Alternating table row colours.
-- Hover and focus effects.
-- Video display.
-
-## Features
-- Semantic HTML elements.
-- Structured HTML expense table.
-- Form with input fields and category dropdown.
-- Image and YouTube iframe.
-- Details and summary elements.
-- Advanced CSS selectors.
-
-## Technologies Used
-- HTML5
-- CSS3
-
-## Author
-Isaac Ladu James
-
+This project demonstrates practical skills in HTML, CSS and JavaScript, including responsive web design, variables, user input, arrays, objects, functions, loops, conditional statements and mathematical calculations.
