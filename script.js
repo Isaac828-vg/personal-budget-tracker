@@ -1,4 +1,5 @@
-// SpendWise - JavaScript Foundation
+
+// SpendWise - Interactive Budget Tracker
 
 // 1. Variables
 let monthlyBudget = 0;
@@ -20,85 +21,158 @@ function calculateRemainingBalance(budget, totalExpenses) {
     return budget - totalExpenses;
 }
 
-// 4. Collect monthly budget
-const budgetInput = prompt("Enter your monthly budget in KES:");
+// 4. Format currency
+function formatCurrency(amount) {
+    return "KES " + amount.toLocaleString("en-KE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
 
-if (budgetInput === null || budgetInput.trim() === "") {
-    console.log("No budget was entered.");
-} else {
-    monthlyBudget = Number(budgetInput);
+// 5. Update dashboard
+function updateDashboard() {
+    const totalExpenses = calculateTotalExpenses(expenses);
+    const remainingBalance = calculateRemainingBalance(
+        monthlyBudget,
+        totalExpenses
+    );
 
-    if (!Number.isFinite(monthlyBudget) || monthlyBudget < 0) {
-        console.log("Please enter a valid budget.");
+    document.getElementById("monthly-budget").textContent =
+        formatCurrency(monthlyBudget);
+
+    document.getElementById("total-expenses").textContent =
+        formatCurrency(totalExpenses);
+
+    document.getElementById("remaining-balance").textContent =
+        formatCurrency(remainingBalance);
+
+    const message = document.getElementById("budget-message");
+
+    message.classList.remove("warning", "success");
+
+    if (monthlyBudget <= 0) {
+        message.textContent = "Set your monthly budget to get started.";
+    } else if (remainingBalance < 0) {
+        message.textContent =
+            "Warning: You have exceeded your monthly budget!";
+        message.classList.add("warning");
     } else {
+        message.textContent =
+            "Good job! You are within your monthly budget.";
+        message.classList.add("success");
+    }
 
-        // 5. Collect expenses
-        const numberInput = prompt("How many expenses do you want to enter?");
-        const numberOfExpenses = Number(numberInput);
+    displayExpenses();
+}
 
-        if (numberInput === null ||
-            numberInput.trim() === "" ||
-            !Number.isInteger(numberOfExpenses) ||
-            numberOfExpenses < 0) {
+// 6. Display expenses on the webpage
+function displayExpenses() {
+    const expenseList = document.getElementById("expense-list");
 
-            console.log("Please enter a valid number of expenses.");
+    expenseList.innerHTML = "";
 
-        } else {
+    if (expenses.length === 0) {
+        expenseList.innerHTML =
+            '<p class="empty-message">No expenses recorded yet.</p>';
+        return;
+    }
 
-            for (let i = 0; i < numberOfExpenses; i++) {
-                const expenseName = prompt("Enter expense name " + (i + 1) + ":");
+    for (let i = 0; i < expenses.length; i++) {
+        const expense = expenses[i];
 
-                if (expenseName === null || expenseName.trim() === "") {
-                    console.log("Invalid expense name. Skipped.");
-                    continue;
-                }
+        const item = document.createElement("div");
+        item.className = "expense-item";
 
-                const amountInput = prompt("Enter amount for " + expenseName + " in KES:");
+        const details = document.createElement("div");
 
-                if (amountInput === null || amountInput.trim() === "") {
-                    console.log("Invalid amount. Skipped.");
-                    continue;
-                }
+        const name = document.createElement("h3");
+        name.textContent = expense.name;
 
-                const amount = Number(amountInput);
+        const category = document.createElement("p");
+        category.textContent = expense.category;
 
-                if (!Number.isFinite(amount) || amount < 0) {
-                    console.log("Invalid amount. Skipped.");
-                    continue;
-                }
+        details.appendChild(name);
+        details.appendChild(category);
 
-                expenses.push({
-                    name: expenseName.trim(),
-                    amount: amount
-                });
-            }
+        const amount = document.createElement("span");
+        amount.className = "expense-amount";
+        amount.textContent = formatCurrency(expense.amount);
 
-            // 6. Display budget summary
-            const totalExpenses = calculateTotalExpenses(expenses);
-            const remainingBalance = calculateRemainingBalance(
-                monthlyBudget,
-                totalExpenses
-            );
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-button";
+        deleteButton.textContent = "Delete";
+        deleteButton.type = "button";
 
-            console.log("===== SPENDWISE BUDGET SUMMARY =====");
-            console.log("Monthly Budget: KES " + monthlyBudget);
-            console.log("Total Expenses: KES " + totalExpenses);
-            console.log("Remaining Balance: KES " + remainingBalance);
+        deleteButton.addEventListener("click", function() {
+            expenses.splice(i, 1);
+            updateDashboard();
+        });
 
-            console.log("Expense Details:");
+        item.appendChild(details);
+        item.appendChild(amount);
+        item.appendChild(deleteButton);
 
-            expenses.forEach(function(expense, index) {
-                console.log(
-                    (index + 1) + ". " + expense.name +
-                    ": KES " + expense.amount
-                );
-            });
-
-            if (remainingBalance < 0) {
-                console.log("Warning: You have exceeded your budget!");
-            } else {
-                console.log("Good job! You are within your budget.");
-            }
-        }
+        expenseList.appendChild(item);
     }
 }
+
+// 7. Listen for monthly budget form submission
+document.getElementById("budget-form").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        const budgetValue = Number(
+            document.getElementById("budget-input").value
+        );
+
+        if (!Number.isFinite(budgetValue) || budgetValue <= 0) {
+            alert("Please enter a valid monthly budget greater than zero.");
+            return;
+        }
+
+        monthlyBudget = budgetValue;
+
+        updateDashboard();
+
+        document.getElementById("budget-form").reset();
+    }
+);
+
+// 8. Listen for expense form submission
+document.getElementById("expense-form").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("expense-name").value.trim();
+        const category = document.getElementById("expense-category").value;
+        const amount = Number(
+            document.getElementById("expense-amount").value
+        );
+
+        if (
+            name === "" ||
+            category === "" ||
+            !Number.isFinite(amount) ||
+            amount <= 0
+        ) {
+            alert("Please enter a valid expense name, category, and amount.");
+            return;
+        }
+
+        expenses.push({
+            name: name,
+            category: category,
+            amount: amount
+        });
+
+        updateDashboard();
+
+        document.getElementById("expense-form").reset();
+    }
+);
+
+// 9. Display the initial dashboard
+updateDashboard();
+
